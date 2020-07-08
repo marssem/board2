@@ -1,0 +1,22 @@
+create table board(
+num number(10) not null,
+title varchar2(100) not null,
+content varchar2(4000) not null,
+credat char(8) not null,
+cretim char(6) not null,
+creusr varchar2(100) not null
+);
+
+select * from board;
+insert into board(num, title, content, credat, cretim, creusr)
+values(
+(select nvl(max(num),0)+1 from board),
+'제목','내용',to_char(sysdate, 'YYYYMMDD'),to_char(sysdate, 'HH24MiSS'),'유저');
+
+delete from board;
+
+select nvl(max(num),0)+1 from board;
+
+select max(num),min(num),sum(num),avg(num) from board;
+
+commit;
