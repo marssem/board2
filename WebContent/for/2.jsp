@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-2.jsp
+2.jsp<br>
+<%
+RequestDispatcher requestDispatcher = request.getRequestDispatcher("/for/3.jsp");
+requestDispatcher.forward(request, response);
+%>
 </body>
 </html>
